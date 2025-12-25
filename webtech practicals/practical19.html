@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Canvas Shapes</title>
+  <style>
+    body { display: grid; place-items: center; min-height: 100vh; background: #f5f7fa; }
+    canvas { border: 2px solid #333; background: #fff; }
+  </style>
+</head>
+<body>
+  <canvas id="art" width="500" height="300"></canvas>
+
+  <script>
+    const canvas = document.getElementById('art');
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = '#4CAF50'; 
+    ctx.fillRect(40, 40, 160, 100);
+
+    ctx.beginPath();
+    ctx.arc(320, 90, 60, 0, Math.PI * 2); 
+    ctx.closePath();
+    ctx.fillStyle = '#FF5722'; 
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(120, 200);
+    ctx.lineTo(40, 260);
+    ctx.lineTo(200, 260);
+    ctx.closePath();
+    ctx.fillStyle = '#3F51B5'; 
+    ctx.fill();
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = '#1A237E';
+    ctx.stroke();
+    ctx.fillStyle = '#222';
+    ctx.font = '16px system-ui';
+    ctx.fillText('Rectangle, Circle, Triangle', 280, 220);
+  </script>
+</body>
+</html>
